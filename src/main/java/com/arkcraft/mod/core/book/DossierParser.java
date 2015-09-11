@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
 import com.arkcraft.mod.core.Main;
@@ -18,6 +19,7 @@ public class DossierParser {
 		gBuilder = new GsonBuilder();
 		gBuilder.registerTypeAdapter(BookDocument.class, new BookDeserializer());
 		gBuilder.registerTypeAdapter(IPage.class, new PageDeserializer());
+		gBuilder.registerTypeAdapter(EntityLivingBase.class, new EntityLivingBaseDeserializer());
 		Gson gson = gBuilder.create();
 		ResourceLocation rloc = new ResourceLocation(Main.MODID, location);
 		try {

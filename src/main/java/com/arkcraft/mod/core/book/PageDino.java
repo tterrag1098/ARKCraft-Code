@@ -45,8 +45,4 @@ public class PageDino implements IPage {
 	public void setTemperance(String temperance) { this.temperance = temperance; }
 	public void setDiet(String diet) { this.diet = diet; }
 	public void setEntityModel(EntityLivingBase model) { this.model = model; }
-	
-	Class<? extends IPage> type;
-	public Class<? extends IPage> getType() { return type; }
-	public void setType(Class<? extends IPage> type) { this.type = type; }
 }

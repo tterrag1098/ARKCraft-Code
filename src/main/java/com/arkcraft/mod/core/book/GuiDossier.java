@@ -73,7 +73,7 @@ public class GuiDossier extends GuiScreen {
 			IPage[] pages = dossier.getEntries();
 			IPage page = pages[currentPage];
 			
-			Class<? extends IPage> clazz = page.getType();
+			Class<? extends IPage> clazz = page.getClass();
 			if(clazz != null) {
 				try {
 					pageLeft = clazz.newInstance();
@@ -87,7 +87,7 @@ public class GuiDossier extends GuiScreen {
 			}
 			page = pages[currentPage+1];
 			if(page != null) {
-				Class<? extends IPage> newClass = page.getType();
+				Class<? extends IPage> newClass = page.getClass();
 				if(newClass != null) {
 					try {
 						pageRight = newClass.newInstance();
